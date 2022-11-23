@@ -1,0 +1,227 @@
+%text-shared {
+  .text {
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+%aligncenter-flex {
+  display: flex;
+
+  align-items: center;
+}
+
+%boxandborderradius {
+  color: rgb(23, 89, 124);
+  border-radius: 10px;
+  box-shadow: var(--primary-box-shadow);
+}
+.welcome {
+  background: rgb(175, 204, 231);
+
+  padding: var(--padding-md) var(--padding-md);
+
+  @extend %boxandborderradius;
+  h1 {
+    @extend %aligncenter-flex;
+
+    text-transform: uppercase;
+    gap: 1rem;
+    margin-bottom: var(--margin-xxs);
+    @media screen and (max-width: 600px) {
+      font-size: 1.2rem;
+    }
+
+    svg {
+      font-size: 2rem;
+      flex-shrink: 0;
+      @media screen and (max-width: 600px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  button {
+    background: #17597c;
+    font-size: 1.2rem;
+    color: white;
+    margin-top: var(--margin-sm);
+    width: 20%;
+    height: 3rem;
+    @media screen and (max-width: 800px) {
+      font-size: 0.68rem;
+    }
+  }
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.content_container {
+  display: flex;
+  gap: 0.5rem;
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+  }
+
+  .announcements {
+    padding: var(--padding-sm) var(--padding-md);
+    margin-top: var(--margin-md);
+
+    flex: 1;
+
+    @extend %boxandborderradius;
+
+    @media screen and (max-width: 850px) {
+      width: 100%;
+    }
+
+    .header {
+      justify-content: space-between;
+
+      @extend %aligncenter-flex;
+
+      margin-bottom: 2rem;
+
+      @extend %text-shared;
+
+      .link a {
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(23, 89, 124);
+        font-size: 1.1rem;
+      }
+    }
+
+    .data {
+      .instructor_container {
+        gap: 0.5rem;
+        z-index: -1;
+
+        @extend %aligncenter-flex;
+      }
+
+      .img_container {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+
+        img {
+          border-radius: 50%;
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+      }
+
+      .username {
+        @extend %aligncenter-flex;
+
+        gap: 0.1rem;
+        cursor: pointer;
+
+        &:after {
+          content: "";
+          width: 1px;
+          height: 1.5rem;
+          background: rgb(223, 223, 223);
+          margin-right: var(--margin-xs);
+          margin-left: var(--margin-xs);
+        }
+
+        span {
+          font-size: 0.8rem;
+          font-weight: bold;
+          color: #475569;
+          @media screen and (max-width: 360px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .quiz {
+    width: 35%;
+
+    padding: var(--padding-sm) var(--padding-md);
+    margin-top: var(--margin-md);
+
+    @extend %boxandborderradius;
+
+    @media screen and (max-width: 850px) {
+      width: 100%;
+      flex: 1;
+      margin-top: var(--margin-sm);
+    }
+
+    .header {
+      justify-content: space-between;
+
+      flex-direction: row;
+      margin-bottom: 1rem;
+      @extend %aligncenter-flex;
+
+      @extend %text-shared;
+
+      .link a {
+        font-weight: bold;
+        text-decoration: none;
+        color: rgb(23, 89, 124);
+        font-size: 1.1rem;
+      }
+    }
+
+    .data {
+      .quiz_container {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+
+        .quiz_title p {
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .quiz_details {
+          li {
+            margin-bottom: 0.25rem;
+
+            .quiz_details_head {
+              font-weight: bold;
+              margin-right: 0.25rem;
+            }
+          }
+
+          .quiz_cta {
+            width: 100%;
+
+            &_btn {
+              text-decoration: none;
+              padding: 0.25rem 0;
+              display: block;
+              text-align: center;
+              border: 1px solid rgb(59, 130, 152);
+              color: rgb(23, 89, 124);
+              border-radius: 5px;
+              font-weight: bold;
+              line-height: 2;
+              font-size: 1.1rem;
+              text-transform: uppercase;
+              margin: 0.5rem 0;
+              transition: all ease-in-out 300ms;
+
+              &:hover {
+                background-color: #475569;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

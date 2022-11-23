@@ -1,0 +1,22 @@
+%displayflexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login_container {
+  width: 100vw;
+  height: 100vh;
+
+  @extend %displayflexcenter;
+
+  &_ctx {
+    @extend %displayflexcenter;
+    &_text {
+      color: rgb(2, 39, 46);
+      font-size: 1.8rem;
+      padding-bottom: 4vw;
+    }
+  }
+}
